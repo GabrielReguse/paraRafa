@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════
+   FOTOS — styles
+═══════════════════════════════════════ */
+
+.fotos-header {
+    text-align: center;
+    padding: 48px 20px 8px;
+}
+
+.fotos-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+    color: var(--rose-deep);
+    margin-bottom: 10px;
+}
+
+.fotos-header p {
+    color: var(--text-soft);
+    font-size: .92rem;
+    font-style: italic;
+}
+
+.fotos-header .header-flowers {
+    font-size: 1.5rem;
+    letter-spacing: .35em;
+    opacity: .4;
+    margin-top: 10px;
+    display: block;
+    user-select: none;
+}
+
+/* ── GALLERY ──────────────────────── */
+.fotos-gallery {
+    padding: 36px 20px 90px;
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Each row: one big polaroid pushed left or right */
+.fotos-row {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.fotos-row.left {
+    justify-content: flex-start;
+}
+
+.fotos-row.right {
+    justify-content: flex-end;
+}
+
+/* Horizontal indentation per side */
+.fotos-row.left .polaroid {
+    margin-left: clamp(14px, 7vw, 90px);
+}
+
+.fotos-row.right .polaroid {
+    margin-right: clamp(14px, 7vw, 90px);
+}
+
+/* Big size */
+.fotos-row .polaroid {
+    width: clamp(230px, 34vw, 300px);
+}
+
+/* Larger caption */
+.fotos-row .polaroid .polaroid-phrase {
+    font-size: 1.05rem;
+}
+
+.fotos-row .polaroid .polaroid-date {
+    font-size: .72rem;
+}
+
+/* Side blurb — decorative text next to the polaroid */
+.fotos-blurb {
+    flex: 1;
+    padding: 0 24px;
+    max-width: 220px;
+}
+
+.fotos-row.right .fotos-blurb {
+    text-align: right;
+}
+
+.fotos-blurb .blurb-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fotos-blurb p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: clamp(.78rem, 1.8vw, .9rem);
+    color: var(--text-soft);
+    line-height: 1.65;
+}
+
+/* Quote divider */
+.fotos-quote {
+    background: linear-gradient(135deg, var(--rose-light), #fde8f0);
+    border-radius: 14px;
+    padding: 22px 28px;
+    text-align: center;
+    box-shadow: 0 4px 18px var(--shadow);
+    border: 1px solid var(--rose-light);
+    position: relative;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.fotos-quote::before {
+    content: '❝';
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    font-size: 1.8rem;
+    opacity: .15;
+    color: var(--rose-deep);
+}
+
+.fotos-quote::after {
+    content: '❞';
+    position: absolute;
+    bottom: 8px;
+    right: 14px;
+    font-size: 1.8rem;
+    opacity: .15;
+    color: var(--rose-deep);
+}
+
+.fotos-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(.9rem, 2.2vw, 1.08rem);
+    color: var(--rose-deep);
+    line-height: 1.7;
+}
+
+/* ── RESPONSIVE ───────────────────── */
+@media (max-width: 620px) {
+    .fotos-gallery {
+        gap: 28px;
+        padding: 28px 14px 70px;
+    }
+
+    .fotos-row {
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .fotos-row .polaroid {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: clamp(195px, 76vw, 280px);
+    }
+
+    .fotos-blurb {
+        max-width: 100%;
+        text-align: center !important;
+        padding: 10px 8px 0;
+    }
+
+    .fotos-row.right .fotos-blurb {
+        text-align: center;
+    }
+}
